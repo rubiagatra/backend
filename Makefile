@@ -1,2 +1,5 @@
 dev-api:
-	@gowatch -o bin/api -p service/api/main.go
+	go run service/api/main.go serve
+
+migrate-api:
+	go run service/api/main.go migrate

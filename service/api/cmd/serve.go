@@ -8,6 +8,7 @@ import (
 	"fmt"
 
 	"github.com/rubiagatra/backend/config"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -20,6 +21,9 @@ var serveCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		config.GetConfig()
 
+		log.WithFields(log.Fields{
+			"animal": "walrus",
+		}).Info("A walrus appears")
 		fmt.Println(viper.GetString("port"))
 	},
 }
