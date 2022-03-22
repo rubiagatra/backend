@@ -17,7 +17,7 @@ func main() {
 		option := args[1]
 
 		m, err := migrate.New(
-			"file://db/migrations",
+			"file://./db/migrations",
 			"postgres://postgres:postgres@localhost:5432/api?sslmode=disable")
 		if err != nil {
 			log.Fatal(err)
